@@ -26,7 +26,7 @@ $(document).ready(function(){
 		dataType:'json',
 		data:'data='+getData,
 		success: function(data){
-		
+			alert("Contacts added successfully");
 		}
 		});
 		}

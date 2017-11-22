@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,8 +17,6 @@ import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 import com.google.appengine.api.datastore.FetchOptions;
-import com.google.appengine.api.datastore.Key;
-import com.google.appengine.api.datastore.KeyFactory;
 import com.google.appengine.api.datastore.PreparedQuery;
 import com.google.appengine.api.datastore.Query;
 import com.google.appengine.api.datastore.Query.FilterOperator;
@@ -33,7 +32,7 @@ public class ContactApplicationServlet {
 	@RequestMapping(value = "/add.ds", method = RequestMethod.POST)
 	public void doPost(  HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException, JSONException
 	   {
-		
+		String message = null;
 		resp.setContentType("text/html");
 		  PrintWriter out=resp.getWriter();
 		  
@@ -61,10 +60,7 @@ public class ContactApplicationServlet {
 
 //			q.addFilter("FirstName", FilterOperator.EQUAL, search);
 			PreparedQuery pq = datastore.prepare(q);
-			List<Entity> customers =
-                 datastore.prepare(q).asList(FetchOptions.Builder.withLimit(10));
-			
-			try{
+			List<Entity> customers = datastore.prepare(q).asList(FetchOptions.Builder.withLimit(10));
 				
 				if(customers.isEmpty()){
 					
@@ -75,19 +71,22 @@ public class ContactApplicationServlet {
 					 customer.setProperty("Email", mail);
 					 customer.setProperty("Address", address);
 					 datastore.put(customer); 
-					 out.println("Contact saved");
+					 
+					 out.println("Contact Added");
+//					 RequestDispatcher rd=req.getRequestDispatcher("/Success.jsp");
+//				     rd.forward(req, resp);
 					
 					
 			    }  
 			    else{  
 			    	
-			    	out.println("Sorry already Contact available with the same phone number");
+			    	out.println("Sorry already Contact available with the same phone number"); 
+//			        RequestDispatcher rd=req.getRequestDispatcher("/Add.jsp");  
+//			        rd.include(req, resp);  
 				}
-			}
-			finally{
-				
-				
-			}
+			
+//			System.out.println(message+"message:");
+//			return message;
 		
 	   }
 	
@@ -118,10 +117,15 @@ public class ContactApplicationServlet {
 				
 				if(!customers.isEmpty()){
 					
-					out.println("Contact found");
+				     out.println("Contact Found");
+//					 RequestDispatcher rd=req.getRequestDispatcher("/Success.jsp");
+//				     rd.forward(req, resp);
 			    }  
 			    else{  
+			    	
 			    	out.println("No Contact found");  
+//			        RequestDispatcher rd=req.getRequestDispatcher("/Add.jsp");  
+//			        rd.include(req, resp);  
 				}
 			}
 			finally{

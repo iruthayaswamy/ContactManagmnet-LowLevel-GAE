@@ -48,27 +48,27 @@ input[type=submit]:hover {
  
 
     <label for="fname">First Name</label>
-    <input type="text" id="fname" >
+    <input type="text" id="fname" placeholder="Your First name..">
 
     <label for="lname">Last Name</label>
-    <input type="text" id="lname" >
+    <input type="text" id="lname" placeholder="Your Last name.."><br><br>
 
-    <label for="gender">Gender</label>
-    <select id="gender" name="gender">
+     <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
       <option value="Male">Male</option>
       <option value="Female">Female</option>
       <option value="others">Others</option>
     </select>
-
+    
     <label for="pno">Phone Number</label>
-    <input type="text" id="pno" placeholder="Update Contact with Phone Number..">
+    <input type="text" id="pno" placeholder="Your Phone Number..">
     
     <label for="email">Email</label>
-    <input type="text" id="email">
+    <input type="text" id="email" placeholder="Your Email..">
     
     
     <label for="address">Address</label>
-    <textarea id="address" name="address"  style="height:150px"></textarea>
+    <textarea id="address" name="address" placeholder="Enter your address.." style="height:150px"></textarea>
 
     <input type="submit" id="update" value="update">
     

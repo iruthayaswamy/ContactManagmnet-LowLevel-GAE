@@ -13,23 +13,46 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Show contacts</title>
+<style>
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
 </head>
 <body>
 
 	<h2>Contacts</h2>
-	<table border="1">
-		<thead>
+	<table id="customers">
+		
 			<tr>
-				<td>FirstName</td>
-				<td>LastName</td>
-				<td>Gender</td>
-				<td>Phone Number</td>
-				<td>Email</td>
-				<td>Address</td>
-			</tr>
+    <th>FirstName</th>
+    <th>LastName</th>
+    <th>Gender</th>
+    <th>Phone Number</th>
+    <th>Email</th>
+    <th>Address</th>
+  </tr>
 			
-		</thead>
 		<%
 		DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 		Query q = new Query("Contact");

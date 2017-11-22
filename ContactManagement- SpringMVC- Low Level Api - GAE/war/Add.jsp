@@ -52,10 +52,10 @@ input[type=submit]:hover {
     <input type="text" id="fname" placeholder="Your First name..">
 
     <label for="lname">Last Name</label>
-    <input type="text" id="lname" placeholder="Your Last name..">
+    <input type="text" id="lname" placeholder="Your Last name.."><br><br>
 
-    <label for="gender">Gender</label>
-    <select id="gender" name="gender">
+    <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
       <option value="Male">Male</option>
       <option value="Female">Female</option>
       <option value="others">Others</option>
