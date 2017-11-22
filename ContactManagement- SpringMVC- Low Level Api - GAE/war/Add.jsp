@@ -71,7 +71,7 @@ input[type=submit]:hover {
     <label for="address">Address</label>
     <textarea id="address" name="address" placeholder="Enter your address.." style="height:150px"></textarea>
 
-    <input type="submit" id="Add" value="Add"  onclick="submitForm()">
+    <input type="submit" id="Add" value="Add">
     
 
   
