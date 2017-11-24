@@ -15,33 +15,60 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Show contacts</title>
 <style>
-#customers {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+table {
     border-collapse: collapse;
     width: 100%;
 }
 
-#customers td, #customers th {
-    border: 1px solid #ddd;
+th, td {
     padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+tr:hover {background-color:#f5f5f5;}
+</style>
+<style>
+body {margin:0;}
 
-#customers tr:hover {background-color: #ddd;}
+.navbar {
+  overflow: hidden;
+  background-color:#4CAF50;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
-#customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
 }
 </style>
 </head>
 <body>
 
-	<h2>Contacts</h2>
+<div class="navbar">
+  <a href="Add.jsp">Add Contact</a>
+  <a href="Search.jsp">Search Contact</a>
+  <a href="Update.jsp">Update Contact</a>
+  <a href="Delete.jsp">Delete Contact</a>
+  <a href="Show.jsp">Show Contact</a>
+</div>
+<br>
+<br>
+<br>
+<br>
 	<table id="customers">
 		
 			<tr>

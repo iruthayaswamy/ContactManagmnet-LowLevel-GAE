@@ -5,13 +5,44 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style>
+body {margin:0;}
+
+.navbar {
+  overflow: hidden;
+  background-color:#4CAF50;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+</style>
 </head>
 <body>
-<a href="Add.jsp">Add contact</a>
-<a href="Search.jsp">Search contact</a>
-<a href="Update.jsp">update contact</a>
-<a href="Delete.jsp">Delete contact</a>
-<a href="Show.jsp">Show contacts</a>
+<div class="navbar">
+  <a href="Add.jsp">Add Contact</a>
+  <a href="Search.jsp">Search Contact</a>
+  <a href="Update.jsp">Update Contact</a>
+  <a href="Delete.jsp">Delete Contact</a>
+  <a href="Show.jsp">Show Contact</a>
+</div>
+
+
 
 </body>
 </html>
